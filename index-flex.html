@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asais Creative | 创意设计</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Sono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #e53935; /* Singapore Red */
+      --secondary: #ffffff; /* Singapore White */
+      --accent: #ed6c02; /* Orange accent */
+      --text-dark: #212121;
+      --text-light: #757575;
+      --bg-light: #f5f5f5;
+      --spacing-sm: 10px;
+      --spacing-md: 20px;
+      --spacing-lg: 40px;
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--secondary);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+
+    /* Header */
+    header {
+      background-color: var(--secondary);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .logo-text span {
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .language-toggle {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-light);
+      transition: var(--transition);
+    }
+
+    .lang-btn.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 150px 0 100px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
+    }
+
+    .hero .creative {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-lg);
+    }
+
+    .cta-button {
+      background-color: var(--primary);
+      color: var(--secondary);
+      border: none;
+      padding: 12px 30px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      background-color: #c62828;
+      transform: translateY(-2px);
+    }
+
+    /* Services Section */
+    .services {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .section-title p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: var(--secondary);
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: var(--spacing-lg);
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      background-color: rgba(229, 57, 53, 0.1);
+      color: var(--primary);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .card-icon i {
+      font-size: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .card-text {
+      color: var(--text-light);
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: var(--spacing-lg) 0;
+      background-color: var(--bg-light);
+    }
+
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      margin-top: var(--spacing-lg);
+    }
+
+    .pricing-plan {
+      flex: 1;
+      max-width: 350px;
+      padding: var(--spacing-lg);
+      background-color: var(--secondary);
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-plan.featured {
+      border: 2px solid var(--primary);
+      transform: scale(1.05);
+    }
+
+    .pricing-plan.featured:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+
+    .plan-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-dark);
+    }
+
+    .plan-price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: var(--spacing-md);
+      color: var(--primary);
+    }
+
+    .plan-period {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-weight: normal;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--spacing-lg) 0;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-light);
+    }
+
+    .plan-button {
+      padding: 12px 24px;
+      background-color: var(--primary);
+      color: var(--secondary);
+      border-radius: var(--border-radius);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+
+    .plan-button:hover {
+      background-color: #c62828;
+      transform: translateY(-2px);
+    }
+
+    .plan-button.featured {
+      background-color: var(--accent);
+    }
+
+    .plan-button.featured:hover {
+      background-color: #e65100;
+    }
+
+    /* About Section */
+    .about {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: var(--spacing-lg) 0;
+      background-color: var(--bg-light);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--text-dark);
+      color: var(--secondary);
+      padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--secondary);
+    }
+
+    .footer-about {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .footer-about p {
+      color: #bdbdbd;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .footer-column ul li a {
+      color: #bdbdbd;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--secondary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--spacing-md);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #bdbdbd;
+    }
+
+    /* Language Toggle */
+    .lang-en {
+      display: block;
+    }
+
+    .lang-zh {
+      display: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1250px) {
+      .pricing-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .pricing-plan.featured {
+        transform: none;
+      }
+      
+      .pricing-plan.featured:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .about-content {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+      }
+
+      .footer-links {
+        gap: var(--spacing-md);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.7rem;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        padding: 120px 0 60px;
+      }
+
+      .services, .pricing, .about, .contact {
+        padding: var(--spacing-md) 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <img src="./assets/images/logo.png" alt="Asais Creative Logo">
+          <div class="logo-text">Asais<span>Creative</span></div>
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="lang-en">Home</a>
+          <a href="#home" class="lang-zh">首页</a>
+          <a href="#services" class="lang-en">Services</a>
+          <a href="#services" class="lang-zh">服务</a>
+          <a href="#pricing" class="lang-en">Pricing</a>
+          <a href="#pricing" class="lang-zh">价格</a>
+          <a href="#about" class="lang-en">About</a>
+          <a href="#about" class="lang-zh">关于</a>
+          <a href="#contact" class="lang-en">Contact</a>
+          <a href="#contact" class="lang-zh">联系</a>
+          <div class="language-toggle">
+            <button class="lang-btn active" id="lang-en">EN</button>
+            <button class="lang-btn" id="lang-zh">中文</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1 class="lang-en">We are a <span class="creative">Creative</span> Design Agency</h1>
+      <h1 class="lang-zh">我们是<span class="creative">创意</span>设计机构</h1>
+      <p class="lang-en">Based in Singapore, we create beautiful and functional websites for businesses of all sizes.</p>
+      <p class="lang-zh">立足新加坡，我们为各种规模的企业创建美观实用的网站。</p>
+      <button class="cta-button lang-en">Get Started</button>
+      <button class="cta-button lang-zh">开始合作</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="lang-en">Our Services</h2>
+        <h2 class="lang-zh">我们的服务</h2>
+        <p class="lang-en">We offer a range of creative services to help your business grow.</p>
+        <p class="lang-zh">我们提供一系列创意服务，帮助您的业务增长。</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="card-title lang-en">Web Design</h3>
+          <h3 class="card-title lang-zh">网页设计</h3>
+          <p class="card-text lang-en">Beautiful, responsive websites that work on all devices.</p>
+          <p class="card-text lang-zh">美观、响应式的网站，适用于所有设备。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="card-title lang-en">Web Development</h3>
+          <h3 class="card-title lang-zh">网站开发</h3>
+          <p class="card-text lang-en">Custom websites built with modern technologies.</p>
+          <p class="card-text lang-zh">使用现代技术构建的定制网站。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="card-title lang-en">Mobile Apps</h3>
+          <h3 class="card-title lang-zh">移动应用</h3>
+          <p class="card-text lang-en">Engaging mobile applications for iOS and Android.</p>
+          <p class="card-text lang-zh">为iOS和Android开发引人入胜的移动应用程序。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="lang-en">Our Pricing</h2>
+        <h2 class="lang-zh">我们的价格</h2>
+        <p class="lang-en">Choose the plan that works best for your business</p>
+        <p class="lang-zh">选择最适合您业务的方案</p>
+      </div>
+      <div class="pricing-container">
+        <div class="pricing-plan">
+          <div class="plan-title lang-en">Basic</div>
+          <div class="plan-title lang-zh">基础版</div>
+          <div class="plan-price">$9.99<span class="plan-period lang-en">/month</span><span class="plan-period lang-zh">/月</span></div>
+          <ul class="plan-features">
+            <li class="lang-en">✅ 10GB Storage</li>
+            <li class="lang-zh">✅ 10GB 存储空间</li>
+            <li class="lang-en">✅ 1 User</li>
+            <li class="lang-zh">✅ 1 个用户</li>
+            <li class="lang-en">🚫 Support</li>
+            <li class="lang-zh">🚫 无技术支持</li>
+          </ul>
+          <button class="plan-button lang-en">Sign Up</button>
+          <button class="plan-button lang-zh">立即注册</button>
+        </div>
+        <div class="pricing-plan featured">
+          <div class="plan-title lang-en">Standard</div>
+          <div class="plan-title lang-zh">标准版</div>
+          <div class="plan-price">$19.99<span class="plan-period lang-en">/month</span><span class="plan-period lang-zh">/月</span></div>
+          <ul class="plan-features">
+            <li class="lang-en">✅ 50GB Storage</li>
+            <li class="lang-zh">✅ 50GB 存储空间</li>
+            <li class="lang-en">✅ 5 Users</li>
+            <li class="lang-zh">✅ 5 个用户</li>
+            <li class="lang-en">✅ Phone & Email Support</li>
+            <li class="lang-zh">✅ 电话和邮件支持</li>
+          </ul>
+          <button class="plan-button featured lang-en">Sign Up</button>
+          <button class="plan-button featured lang-zh">立即注册</button>
+        </div>
+        <div class="pricing-plan">
+          <div class="plan-title lang-en">Premium</div>
+          <div class="plan-title lang-zh">高级版</div>
+          <div class="plan-price">$49.99<span class="plan-period lang-en">/month</span><span class="plan-period lang-zh">/月</span></div>
+          <ul class="plan-features">
+            <li class="lang-en">✅ 100GB Storage</li>
+            <li class="lang-zh">✅ 100GB 存储空间</li>
+            <li class="lang-en">✅ 10 Users</li>
+            <li class="lang-zh">✅ 10 个用户</li>
+            <li class="lang-en">✅ 24/7 Support</li>
+            <li class="lang-zh">✅ 24/7 全天候支持</li>
+          </ul>
+          <button class="plan-button lang-en">Sign Up</button>
+          <button class="plan-button lang-zh">立即注册</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="lang-en">About Asais Creative</h2>
+          <h2 class="lang-zh">关于Asais创意</h2>
+          <p class="lang-en">We are a Singapore-based creative agency specializing in web design and development. Our team of experienced professionals is dedicated to delivering high-quality solutions that help businesses succeed in the digital world.</p>
+          <p class="lang-zh">我们是一家位于新加坡的创意机构，专注于网页设计和开发。我们经验丰富的专业团队致力于提供高质量的解决方案，帮助企业在数字世界中取得成功。</p>
+          <p class="lang-en">With a focus on clean design, user experience, and modern technologies, we create digital products that not only look great but also perform exceptionally well.</p>
+          <p class="lang-zh">我们专注于简洁的设计、用户体验和现代技术，创建不仅外观出色而且性能卓越的数字产品。</p>
+        </div>
+        <div class="about-image">
+          <img src="./assets/images/singapore-skyline.jpg" alt="Singapore Skyline">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="lang-en">Contact Us</h2>
+        <h2 class="lang-zh">联系我们</h2>
+        <p class="lang-en">Get in touch to discuss your project</p>
+        <p class="lang-zh">联系我们讨论您的项目</p>
+      </div>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="name" class="lang-en">Name</label>
+            <label for="name" class="lang-zh">姓名</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="lang-en">Email</label>
+            <label for="email" class="lang-zh">电子邮件</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="lang-en">Message</label>
+            <label for="message" class="lang-zh">留言</label>
+            <textarea id="message" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="cta-button lang-en">Send Message</button>
+          <button type="submit" class="cta-button lang-zh">发送留言</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="./assets/images/logo.png" alt="Asais Creative Logo">
+            <div class="footer-logo-text">Asais Creative</div>
+          </div>
+          <p class="lang-en">A Singapore-based creative agency specializing in web design and development.</p>
+          <p class="lang-zh">一家位于新加坡的创意机构，专注于网页设计和开发。</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3 class="lang-en">Services</h3>
+            <h3 class="lang-zh">服务</h3>
+            <ul>
+              <li><a href="#" class="lang-en">Web Design</a><a href="#" class="lang-zh">网页设计</a></li>
+              <li><a href="#" class="lang-en">Web Development</a><a href="#" class="lang-zh">网站开发</a></li>
+              <li><a href="#" class="lang-en">Mobile Apps</a><a href="#" class="lang-zh">移动应用</a></li>
+              <li><a href="#" class="lang-en">Branding</a><a href="#" class="lang-zh">品牌设计</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="lang-en">Company</h3>
+            <h3 class="lang-zh">公司</h3>
+            <ul>
+              <li><a href="#" class="lang-en">About Us</a><a href="#" class="lang-zh">关于我们</a></li>
+              <li><a href="#" class="lang-en">Our Team</a><a href="#" class="lang-zh">我们的团队</a></li>
+              <li><a href="#" class="lang-en">Careers</a><a href="#" class="lang-zh">职业机会</a></li>
+              <li><a href="#" class="lang-en">Contact</a><a href="#" class="lang-zh">联系我们</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="lang-en">&copy; 2023 Asais Creative. All rights reserved.</p>
+        <p class="lang-zh">&copy; 2023 Asais创意。保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language Toggle Functionality
+    document.getElementById('lang-en').addEventListener('click', function() {
+      toggleLanguage('en');
+    });
+
+    document.getElementById('lang-zh').addEventListener('click', function() {
+      toggleLanguage('zh');
+    });
+
+    function toggleLanguage(lang) {
+      // Update active button
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+      
+      // Show/hide language content
+      const enElements = document.querySelectorAll('.lang-en');
+      const zhElements = document.querySelectorAll('.lang-zh');
+      
+      if (lang === 'en') {
+        enElements.forEach(el => el.style.display = 'block');
+        zhElements.forEach(el => el.style.display = 'none');
+      } else {
+        enElements.forEach(el => el.style.display = 'none');
+        zhElements.forEach(el => el.style.display = 'block');
+      }
+    }
+
+    // Initialize with English
+    toggleLanguage('en');
+  </script>
+</body>
+
+</html>
